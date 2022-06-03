@@ -1,0 +1,8 @@
+img {
+  max-width: 140px;
+  border-radius: 50%;
+}
+
+ion-input[type="number"]:after {
+  content: "cm";
+}

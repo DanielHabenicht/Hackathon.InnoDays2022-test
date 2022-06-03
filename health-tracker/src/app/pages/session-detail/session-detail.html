@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-button (click)="toggleFavorite()">
+        <ion-icon
+          *ngIf="!isFavorite"
+          slot="icon-only"
+          name="star-outline"
+        ></ion-icon>
+        <ion-icon *ngIf="isFavorite" slot="icon-only" name="star"></ion-icon>
+      </ion-button>
+      <ion-button (click)="shareSession()">
+        <ion-icon slot="icon-only" name="share"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-header translucent="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title *ngIf="!ios" size="large">Example</ion-title>
+    <ion-chip *ngIf="!ios" slot="end" color="success">
+      <ion-label>80%</ion-label>
+    </ion-chip>
+  </ion-toolbar>
+</ion-header> -->
+<ion-content fullscreen="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{foodGroup.name}}</ion-title>
+      <ion-chip slot="end" color="success">
+        <ion-label>80%</ion-label>
+      </ion-chip>
+    </ion-toolbar>
+  </ion-header>
+  <div class="about-info">
+    <h3 class="ion-padding-top ion-padding-start">You bought:</h3>
+
+    <ion-list>
+      <ion-list-header lines="inset">
+        <ion-label>REWE - Di 10.06.2022</ion-label>
+      </ion-list-header>
+      <ion-item lines="none">
+        <ion-label>Bread</ion-label>
+        <ion-note slot="end">500g</ion-note>
+      </ion-item>
+      <ion-list-header lines="inset">
+        <ion-label>BILLA - Mo 10.06.2022</ion-label>
+      </ion-list-header>
+      <ion-item lines="none">
+        <ion-label>Rice</ion-label>
+        <ion-note slot="end">250g</ion-note>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Bulgur</ion-label>
+        <ion-note slot="end">200g</ion-note>
+      </ion-item>
+
+      <ion-list-header lines="inset">
+        <ion-label>LIDL - Sa 10.06.2022</ion-label>
+      </ion-list-header>
+      <ion-item lines="none">
+        <ion-label>Bread</ion-label>
+        <ion-note slot="end">200g</ion-note>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Sandwich</ion-label>
+        <ion-note slot="end">100g</ion-note>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label>Croissants</ion-label>
+        <ion-note slot="end">50g</ion-note>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

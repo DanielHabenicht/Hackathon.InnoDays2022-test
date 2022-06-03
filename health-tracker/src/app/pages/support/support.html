@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/account'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Connected Retailers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list #scheduleList>
+    <ion-item-group *ngFor="let group of retailerGroups">
+      <ion-item-divider sticky>
+        <ion-label> {{group.name}} </ion-label>
+      </ion-item-divider>
+
+      <ion-item-sliding *ngFor="let session of group.retailers" #slidingItem>
+        <ion-item>
+          <!-- routerLink="/app/tabs/schedule/session/{{session.id}}" -->
+          <ion-label>
+            <h3>{{session.name}}</h3>
+            <!-- <p>
+              {{session.timeStart}} &mdash; {{session.timeEnd}}:
+              {{session.location}}
+            </p> -->
+          </ion-label>
+          <ion-chip *ngIf="session.connected" slot="end" color="success">
+            <ion-label>Connected</ion-label>
+          </ion-chip>
+        </ion-item>
+        <ion-item-options>
+          <ion-item-option
+            color="favorite"
+            (click)="addFavorite(slidingItem, session)"
+            *ngIf="session.connected"
+          >
+            Update
+          </ion-item-option>
+          <ion-item-option
+            color="danger"
+            (click)="removeFavorite(slidingItem, session, 'Remove Favorite')"
+            *ngIf="session.connected"
+          >
+            Remove
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+  <!-- <div class="support-logo">
+    <img src="assets/img/appicon.svg" alt="Ionic Logo" />
+  </div>
+
+  <form #submitForm="ngForm" novalidate (ngSubmit)="submit(submitForm)">
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label position="stacked" color="primary"
+          >Enter your support message below</ion-label
+        >
+        <ion-textarea
+          [(ngModel)]="supportMessage"
+          name="supportQuestion"
+          #supportQuestion="ngModel"
+          rows="6"
+          required
+        ></ion-textarea>
+      </ion-item>
+    </ion-list>
+
+    <ion-text color="danger">
+      <p
+        [hidden]="supportQuestion.valid || submitted === false"
+        class="ion-padding-start"
+      >
+        Support message is required
+      </p>
+    </ion-text>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit">Submit</ion-button>
+    </div>
+  </form> -->
+</ion-content>

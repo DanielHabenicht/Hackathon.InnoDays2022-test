@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="username" class="ion-padding-top ion-text-center">
+    <img src="https://www.gravatar.com/avatar?d=mm&s=140" alt="avatar" />
+    <h2>{{username}}</h2>
+
+    <ion-list inset>
+      <ion-item (click)="changeUsername()">
+        <ion-label>Change Username </ion-label>
+      </ion-item>
+      <ion-item (click)="changePassword()">
+        <ion-label>Change Password</ion-label></ion-item
+      >
+      <ion-item>
+        <ion-label>Diet: Current</ion-label>
+        <ion-select value="flexitarian" [interfaceOptions]="selectOptions">
+          <ion-select-option value="vegetarian">Vegetarian</ion-select-option>
+          <ion-select-option value="vegan">Vegan</ion-select-option>
+          <ion-select-option value="chicago">Pescatarian</ion-select-option>
+          <ion-select-option value="flexitarian">Flexitarian</ion-select-option>
+          <ion-select-option value="seattle">Meat</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Diet: Want to eat</ion-label>
+        <ion-select value="vegetarian" [interfaceOptions]="selectOptions">
+          <ion-select-option value="vegetarian">Vegetarian</ion-select-option>
+          <ion-select-option value="vegan">Vegan</ion-select-option>
+          <ion-select-option value="chicago">Pescatarian</ion-select-option>
+          <ion-select-option value="flexitarian">Flexitarian</ion-select-option>
+          <ion-select-option value="seattle">Meat</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>My goal</ion-label>
+        <ion-select value="keepbodyweight" [interfaceOptions]="selectOptions">
+          <ion-select-option value="keepbodyweight"
+            >Keep Body Weight</ion-select-option
+          >
+          <ion-select-option value="looseweight"
+            >Loose Weight</ion-select-option
+          >
+        </ion-select>
+      </ion-item>
+      <ion-item button="true" id="open-date-input">
+        <ion-label> Birthday </ion-label>
+        <ion-text slot="end">{{ birthday | date: 'mediumDate' }}</ion-text>
+        <ion-popover
+          id="date-input-popover"
+          trigger="open-date-input"
+          [showBackdrop]="false"
+          side="top"
+          alignment="end"
+        >
+          <ng-template>
+            <ion-datetime
+              max="2056"
+              [(ngModel)]="birthday"
+              presentation="date"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+      <ion-item>
+        <ion-label>Height</ion-label>
+        <ion-input
+          slot="end"
+          type="number"
+          value="168"
+          min="40"
+          max="250"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Weight</ion-label>
+        <ion-input
+          slot="end"
+          type="number"
+          value="65"
+          min="10"
+          max="200"
+        ></ion-input>
+      </ion-item>
+      <ion-item (click)="support()">Connect Retailers</ion-item>
+      <ion-item (click)="logout()">Logout</ion-item>
+    </ion-list>
+  </div>
+</ion-content>
