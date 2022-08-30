@@ -13,6 +13,7 @@ import { Config, IonRouterOutlet } from "@ionic/angular";
 export class SessionDetailPage {
   session: any;
   isFavorite = false;
+  ios: boolean;
   defaultHref = "";
 
   public foodGroup = {
@@ -28,7 +29,9 @@ export class SessionDetailPage {
     public config: Config
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.ios = this.config.get("mode") === "ios";
+  }
 
   ionViewWillEnter() {
     this.foodGroup = {

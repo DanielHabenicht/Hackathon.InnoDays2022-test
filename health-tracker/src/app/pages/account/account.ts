@@ -73,6 +73,6 @@ export class AccountPage implements AfterViewInit {
   }
 
   support() {
-    this.router.navigateByUrl("/support");
+    this.router.navigateByUrl("/connected-retailers");
   }
 }

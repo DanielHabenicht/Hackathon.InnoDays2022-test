@@ -1,0 +1,23 @@
+{
+  "name": "hackathon.innodays2022-test",
+  "version": "1.0.0",
+  "description": "testing some things for InnoDays2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielHabenicht/Hackathon.InnoDays2022-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielHabenicht/Hackathon.InnoDays2022-test/issues"
+  },
+  "homepage": "https://github.com/DanielHabenicht/Hackathon.InnoDays2022-test#readme",
+  "dependencies": {
+    "@azure/ai-form-recognizer": "^3.2.0",
+    "axios": "^0.27.2"
+  }
+}

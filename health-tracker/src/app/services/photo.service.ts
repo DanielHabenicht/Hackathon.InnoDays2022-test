@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Camera, CameraOptions } from "@awesome-cordova-plugins/camera/ngx";
+import { Camera, CameraOptions } from "@ionic-native/camera/ngx";
 import { Storage } from "@ionic/storage";
 
 @Injectable({

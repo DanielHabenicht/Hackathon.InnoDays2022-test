@@ -12,6 +12,7 @@ import { SessionDetailModule } from "../session-detail/session-detail.module";
 import { SpeakerDetailModule } from "../speaker-detail/speaker-detail.module";
 import { SpeakerListModule } from "../speaker-list/speaker-list.module";
 import { GroceryListModule } from "../grocery-list/grocery-list.module";
+import { IngestModule } from "../ingest/about.module";
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { GroceryListModule } from "../grocery-list/grocery-list.module";
     SpeakerDetailModule,
     SpeakerListModule,
     TabsPageRoutingModule,
+    IngestModule,
   ],
   declarations: [TabsPage],
 })

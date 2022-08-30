@@ -10,7 +10,7 @@ import { AppComponent } from "./app.component";
 import { ServiceWorkerModule } from "@angular/service-worker";
 import { environment } from "../environments/environment";
 import { FormsModule } from "@angular/forms";
-import { Camera } from "@awesome-cordova-plugins/camera/ngx";
+import { Camera } from "@ionic-native/camera/ngx";
 
 @NgModule({
   imports: [

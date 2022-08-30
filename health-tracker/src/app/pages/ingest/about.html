@@ -1,0 +1,70 @@
+<ion-content fullscreen="true">
+  <webcam
+    *ngIf="!webcamImage && !items"
+    class="webcam"
+    allowCameraSwitch="true"
+    [trigger]="triggerObservable"
+    (imageCapture)="handleImage($event)"
+  ></webcam>
+
+  <!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Example</ion-title>
+      <ion-chip slot="end" color="success">
+        <ion-label>80%</ion-label>
+      </ion-chip>
+    </ion-toolbar>
+  </ion-header>
+  </div> -->
+  <div class="snapshot" *ngIf="webcamImage">
+    <img [src]="webcamImage.imageAsDataUrl" />
+    <h2>Processing...</h2>
+    <ion-progress-bar type="indeterminate"></ion-progress-bar>
+  </div>
+  <ion-fab
+    *ngIf="!webcamImage && !items"
+    slot="fixed"
+    vertical="bottom"
+    horizontal="center"
+    #fab
+  >
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab
+    *ngIf="!webcamImage && !items"
+    slot="fixed"
+    vertical="bottom"
+    horizontal="left"
+    #fab
+  >
+    <ion-fab-button [size]="'small'" (click)="selectFile()">
+      <ion-icon name="document-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list *ngIf="items">
+    <ion-list-header lines="inset">
+      <ion-label>Your purchase at {{merchant}}:</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let item of items" lines="none">
+      <ion-label>{{item.newname ?? item.name}}</ion-label>
+      <ion-note slot="end">{{item.quantity ?? ''}}</ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-card *ngIf="items">
+    <ion-card-header>
+      <ion-card-subtitle>Tipp:</ion-card-subtitle>
+      <ion-card-title
+        >You can automatically synchronise your purchases by connecting this
+        retailer</ion-card-title
+      >
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button [routerLink]="'/connected-retailers'">Connect</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
